@@ -19,15 +19,14 @@ if uploaded_file:
         st.info("⏳ Translating + Summarizing with Groq...")
         english_summary = translate_hi_en(hindi_text)
 
-        # Show only English summary
+       
         st.subheader("📌 Case Summary (English)")
         st.text_area("Summary:", english_summary, height=200)
 
-        # Predict IPCs
         st.info("⏳ Predicting IPC Sections...")
         ipc_predictions = predict_ipc_sections(english_summary, top_k=3)
 
-        # Show only IPC + Description
+    
         if ipc_predictions:
             st.subheader("📖 Suggested IPC Sections")
             for ipc in ipc_predictions:
@@ -44,3 +43,4 @@ if uploaded_file:
 
     else:
         st.error("No text extracted from the PDF.")
+
