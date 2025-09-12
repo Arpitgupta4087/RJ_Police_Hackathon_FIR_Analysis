@@ -6,7 +6,7 @@ from ipc_predictor import predict_ipc_sections
 
 os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
 
-st.title("⚖️ FIR → IPC Analysis Tool")
+st.title("FIR Analysis Tool")
 
 
 uploaded_file = st.file_uploader("Upload FIR PDF", type=["pdf"])
@@ -43,4 +43,5 @@ if uploaded_file:
 
     else:
         st.error("No text extracted from the PDF.")
+
 
